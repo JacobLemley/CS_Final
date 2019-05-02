@@ -6,7 +6,7 @@ NORMAL
 wow blah blah blah
 blah blah
 LOCATIONS
-location1
+location1:east
 location2
 location3
 OBJECTS

@@ -82,7 +82,7 @@ def goTo(room, player): #function to instantiate/change rooms
 def dropObj(room, player, object):
     pass
 
-    
+
 
 def pickUp(room, player, object):
     pass
@@ -91,6 +91,9 @@ def moveObj(room, player, object):
     pass
 
 def look(player, object):
+    pass
+
+def lookAround(room, player):
     pass
 
 def usePhone(player): #hasn't been tested yet, just needed a home for the reference code
@@ -122,7 +125,6 @@ def endGame():
 
 def main():
     player1 = Player()
-    call = False
     rooms = {
     "yakshack":Room("yakshack"),
     "sign" : Room("sign"),
