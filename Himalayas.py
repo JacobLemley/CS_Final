@@ -82,8 +82,6 @@ def goTo(room, player): #function to instantiate/change rooms
 def dropObj(room, player, object):
     pass
 
-
-
 def pickUp(room, player, object):
     pass
 
@@ -104,24 +102,45 @@ def usePhone(player): #hasn't been tested yet, just needed a home for the refere
     else:
         print("It looks like the batteries are dead.")
 
-def checkInput(raw):
-    if raw == "exit":
-        endGame()
-    if raw == "help":
-        print("help screen goes here")
-
-    #check for verbs
-
 def help():
     pass
 
 def endGame():
-    print("exit message")
     check = input("Want to start again? (Y/N) ").lower()
     if check == "yes" or check == "y":
         main()
     else:
         exit() #https://stackoverflow.com/questions/73663/terminating-a-python-script
+
+
+def checkVerbs(raw, player, room):
+    verb = "default"
+    verbList = [] #list of lists of synonyms for each command
+    verbDict = {} #matches each list of synonyms with a functions
+    #for loop checking if synonym matches any list for each key
+    for key in verbDict.item():
+        print(key)
+    return verb
+
+def checkSubjectraw(raw, player, room, verb):
+    pass
+
+def sortCommand(player, rooms, verb, subject): #sorts the subject and verb options to check for continuity
+    pass
+
+def checkInput(raw, player, rooms):
+    #print(rooms[player.loc].name)
+    subject = ""
+    room = rooms[player.loc]
+    if raw == "exit":
+        endGame()
+    if raw == "help":
+        help()
+    verb = checkVerbs(raw, player, room)
+    subject = checkSubject(raw, player, room, verb)
+    sortCommand(player, rooms, verb, subject)
+
+
 
 def main():
     player1 = Player()
@@ -142,7 +161,7 @@ def main():
     #print(rooms[player1.loc].filepath)
     while True:
         try: #https://www.w3schools.com/python/python_try_except.asp
-            checkInput(input().lower())
+            checkInput(input().lower(), player1, rooms)
         except RuntimeError:
             print("It looks like you did that incorrectly.")
         except EOFError: #https://www.programiz.com/python-programming/exceptions
