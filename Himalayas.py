@@ -38,7 +38,6 @@ class Room:
         while raw[n] != "LOCATIONS": #set normal description attribute, should copy exactly what you put in NORMAL area in the txt file
             self.normalDescription = self.normalDescription + str(raw[n]) + "\n"
             n+=1
-        self.normalDescription = (self.normalDescription).rstrip("\n") #remove whitespace on last line
         n+=1
         while raw[n] != "OBJECTS": # set list of locations available
             temp = []
@@ -59,7 +58,7 @@ class Room:
     def roomDescription(self):
         objstr = "There is a "
         print(self.title)
-        print(tw.fill(self.normalDescription, width=50))
+        print(fill(self.normalDescription, width=50))
         for i in self.objects:
             if self.objects.index(i) != len(self.objects)-1:
                 objstr = objstr + i[0] + ", "
@@ -114,31 +113,60 @@ def endGame():
 
 
 def checkVerbs(raw, player, room):
-    verb = "default"
-    verbList = [] #list of lists of synonyms for each command
-    verbDict = {} #matches each list of synonyms with a functions
+    verb = ""
+    verbList = [["go", "head", "travel"]] #list of lists of synonyms for each command
+    verbDict = { #matches each list of synonyms with a functions
+    "goTo" : verbList[0],
+    }
     #for loop checking if synonym matches any list for each key
-    for key in verbDict.item():
-        print(key)
+    for word in raw:
+        for k, v in verbDict.items():
+            if word in v:
+                verb = k
     return verb
 
-def checkSubjectraw(raw, player, room, verb):
-    pass
+def checkSubject(raw, player, room, verb):
+    sub = ""
+    pos = ""
+    for word in raw:
+        # check if in room inventory
+        for item in player.inventory:
+            if word in item[0]:
+                sub = item[0]
+                pos = "player"
+        for item in room.objects:
+            if word in item[0]:
+                sub = item[0]
+                pos = "room"
+        if verb == "goTo":
+            for item in room.locations:
+                if word in item[1]:
+                    sub = item[0]
+    return sub, pos
 
-def sortCommand(player, rooms, verb, subject): #sorts the subject and verb options to check for continuity
-    pass
+def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
+    normVerbList = ["drop", "pickup", "move"]
+    if verb in normVerbList:
+        print("normal") #check if pos = player or room, separate pickup and drop then either call drop or pickup with room, player, object, worry about move later
+    if verb == "look" and subject != "":
+        pass #check if object is in room or player then pass room, player, object to look function
+    if verb == "look" and subject == "":
+        pass #pass room and player to lookAround function
+    if verb == "goTo":
+        goTo(rooms[subject], player)
 
 def checkInput(raw, player, rooms):
     #print(rooms[player.loc].name)
+    raw = raw.split(" ")
     subject = ""
     room = rooms[player.loc]
-    if raw == "exit":
+    if "exit" in raw:
         endGame()
-    if raw == "help":
+    if "help" in raw:
         help()
     verb = checkVerbs(raw, player, room)
-    subject = checkSubject(raw, player, room, verb)
-    sortCommand(player, rooms, verb, subject)
+    subject, pos = checkSubject(raw, player, room, verb)
+    sortCommand(player, rooms, verb, subject, pos)
 
 
 
@@ -158,7 +186,7 @@ def main():
     #print(rooms[player1.loc].filepath)
     #yakshack = Room("yakshack")
 
-    #print(rooms[player1.loc].filepath)
+    #print(rooms[player1.loc].objects)
     while True:
         try: #https://www.w3schools.com/python/python_try_except.asp
             checkInput(input().lower(), player1, rooms)
