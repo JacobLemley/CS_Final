@@ -1,4 +1,4 @@
---------------------TITLE OF ROOM--------------------
+--------------------Yak Shack--------------------
 INITIAL
 blah blah
 two lines blah blah
@@ -6,9 +6,8 @@ NORMAL
 wow blah blah blah
 blah blah
 LOCATIONS
-location1:east
-location2
-location3
+sign:north
+lodge:south
 OBJECTS
 object1:DESCRIPTION
 object2:DESCRIPTION

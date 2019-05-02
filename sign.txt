@@ -6,9 +6,9 @@ You are back at the sign.
 LOCATIONS
 river:east
 souvenir:west
-lodge:south
+yakshack:south
 OBJECTS
-skull:DESCRIPTION
+guide:DESCRIPTION
 object2:DESCRIPTION
 object3:DESCRIPTION
 object4:DESCRIPTION
