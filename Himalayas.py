@@ -81,10 +81,21 @@ def goTo(room, player): #function to instantiate/change rooms
         print("You have entered the astral plane, good luck traveler")
 
 def dropObj(room, player, object):
-    pass
+    if item.name == object[1]:
+        self.location.inventory.append(item)
+        self.inventory.remove(item)
+        print("You dropped the", item.name)
+        return
+    print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
-    pass
+    for item in self.location.inventory:
+        if item.name == object[1]:
+            self.inventory.append(item)
+            self.locations.inventory.remove(item)
+            print("You picked up the", item.name)
+            return
+    print(object[1] + " is not here!")
 
 def moveObj(room, player, object):
     pass
