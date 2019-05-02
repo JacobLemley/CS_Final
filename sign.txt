@@ -8,7 +8,7 @@ river:east
 souvenir:west
 lodge:south
 OBJECTS
-object1:DESCRIPTION
+skull:DESCRIPTION
 object2:DESCRIPTION
 object3:DESCRIPTION
 object4:DESCRIPTION

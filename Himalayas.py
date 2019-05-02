@@ -1,5 +1,5 @@
-import textwrap as tw #https://pymotw.com/3/textwrap/
-import sys
+from textwrap import fill  #https://pymotw.com/3/textwrap/
+from sys import exit
 
 class Player: #class to store player data, like inventory, location, etc.
     def __init__(self):
@@ -53,7 +53,7 @@ class Room:
 
     def printInitial(self):
             print(self.title)
-            print(tw.fill(self.initialDescription, width=50))
+            print(fill(self.initialDescription, width=50))
             self.visited = True
 
     def roomDescription(self):
@@ -66,7 +66,7 @@ class Room:
             else:
                 objstr = objstr + "and " + i[0] + " in here."
         if len(self.objects) > 0 :
-            print(tw.fill(objstr, width=50))
+            print(fill(objstr, width=50))
 
 
 def goTo(room, player): #function to instantiate/change rooms
@@ -121,7 +121,7 @@ def endGame():
     if check == "yes" or check == "y":
         main()
     else:
-        sys.exit() #https://stackoverflow.com/questions/73663/terminating-a-python-script
+        exit() #https://stackoverflow.com/questions/73663/terminating-a-python-script
 
 def main():
     player1 = Player()
