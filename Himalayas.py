@@ -144,6 +144,7 @@ def checkVerbs(raw, player, room):
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
     sub = ""  #Assignment Statement (3)
     pos = ""
+    count = 0
     for word in raw: ##Nested Loops (12)
         # check if in room inventory
         for item in player.inventory:

@@ -6,7 +6,7 @@ You are back at the sign.
 LOCATIONS
 river:east
 souvenir:west
-lodge:south
+yakshack:south
 OBJECTS
 crown:The crown is no longer shiny and is missing all its jewels, but is still nice to look at.
 sign piece:A half foot by half foot piece of the sign has fallen off ??
