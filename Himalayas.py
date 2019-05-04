@@ -84,7 +84,7 @@ def dropObj(room, player, object):
     if item.name == object[1]:
         self.location.inventory.append(item)
         self.inventory.remove(item)
-        print("You dropped the", item.name)
+        print("You dropped the ", item.name)
         return
     print(object[1] + " is not here!")
 
@@ -118,7 +118,7 @@ def usePhone(player): #hasn't been tested yet, just needed a home for the refere
         print("It looks like the batteries are dead.") ##print() statement (2)
 
 def help():
-    pass #map : shows a map of the project
+    pass #map : shows a map of the project 
 
 def endGame():
     check = input("Want to start again? (Y/N) ").lower()
@@ -144,27 +144,20 @@ def checkVerbs(raw, player, room):
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
     sub = ""  #Assignment Statement (3)
     pos = ""
-    count = 0
     for word in raw: ##Nested Loops (12)
         # check if in room inventory
         for item in player.inventory:
             if word in item[0]:
                 sub = item[0]
                 pos = "player"
-                count += 1
         for item in room.objects: ##Python code that “walks” through the contents of an List (or other data structure) (7)
             if word in item[0]:
                 sub = item[0]
                 pos = "room"
-                count += 1
         if verb == "goTo":
             for item in room.locations: #For loop (7)
                 if word in item[1]:
                     sub = item[0]
-                    count +=1
-                    
-        if count > 1:
-            sub = ""
     return sub, pos
 
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
@@ -192,6 +185,10 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
     verb = checkVerbs(raw, player, room)
     subject, pos = checkSubject(raw, player, room, verb)
     sortCommand(player, rooms, verb, subject, pos)
+
+def helpMe():
+    openHelp = open("help.txt", "r")
+    print(openHelp.read())
 
 def main(): #function definition and call (7)
     player1 = Player()
