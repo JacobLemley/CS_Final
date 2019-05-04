@@ -85,7 +85,6 @@ def dropObj(room, player, object):
         self.location.inventory.append(item)
         self.inventory.remove(item)
         print("You dropped the", item.name)
-        return
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
@@ -94,7 +93,6 @@ def pickUp(room, player, object):
             self.inventory.append(item)
             self.locations.inventory.remove(item)
             print("You picked up the", item.name)
-            return
     print(object[1] + " is not here!")
 
 def moveObj(room, player, object):
@@ -130,15 +128,19 @@ def endGame():
 
 def checkVerbs(raw, player, room):
     verb = ""
+    count = 0
     verbList = [["go", "head", "travel"]] #list of lists of synonyms for each command ##A list that contains lists (20)
     verbDict = { #matches each list of synonyms with a functions
     "goTo" : verbList[0],
     }
     #for loop checking if synonym matches any list for each key
-    for word in raw:
-        for k, v in verbDict.items():
-            if word in v:
-                verb = k
+    for word in raw: #goes through each word in the list of strings provided by the input
+        for k, v in verbDict.items():#goes through each key and list in the dictionary
+            if word in v: # goes through each string in the list at dictionary key k
+                verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
+                count += 1
+    if count > 1:
+        pass # needs an error print message for too many verbs in the input
     return verb
 
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
@@ -162,21 +164,28 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
                 if word in item[1]:
                     sub = item[0]
                     count +=1
-                    
+
         if count > 1:
             sub = ""
     return sub, pos
 
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
     normVerbList = ["drop", "pickup", "move"] #List (10)
+    count = 0
     if verb in normVerbList:
-        print("normal") #check if pos = player or room, separate pickup and drop then either call drop or pickup with room, player, object, worry about move later
+        pass #check if pos = player or room, separate pickup and drop then either call drop or pickup with room, player, object, worry about move later
     if verb == "look" and subject != "":
-        pass #check if object is in room or player then pass room, player, object to look function
+        pass #pass room, player, object to look function
     if verb == "look" and subject == "":
-        pass #pass room and player to lookAround function
+        lookAround(rooms[player.loc], player) #pass room and player to lookAround function
     if verb == "goTo":
-        goTo(rooms[subject], player)
+        if subject == "":
+                print(fill("I don't understand where you want to go.", width=50))
+        else:
+            goTo(rooms[subject], player)
+    if verb == "":
+        print(fill("I don't understand what you want to do. Type HELP for a list of commands.", width=50))
+
 
 def checkInput(raw, player, rooms): #A function that calls another function (main not included) (5)
     #print(rooms[player.loc].name)
