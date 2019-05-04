@@ -6,11 +6,8 @@ You are back at the sign.
 LOCATIONS
 river:east
 souvenir:west
-yakshack:south
+lodge:south
 OBJECTS
-guide:DESCRIPTION
-object2:DESCRIPTION
-object3:DESCRIPTION
-object4:DESCRIPTION
-object5:DESCRIPTION
-object6:DESCRIPTION
+crown:The crown is no longer shiny and is missing all its jewels, but is still nice to look at.
+sign piece:A half foot by half foot piece of the sign has fallen off ??
+crane skull:Well this is creepy, and probably unhelpful unless I am interested in catching some weird avian disease.
