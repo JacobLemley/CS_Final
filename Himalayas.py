@@ -84,7 +84,7 @@ def dropObj(room, player, object):
     if item.name == object[1]:
         self.location.inventory.append(item)
         self.inventory.remove(item)
-        print("You dropped the ", item.name)
+        print(fill("You dropped the " + str(item.name), width=50))
         return
     print(object[1] + " is not here!")
 
@@ -144,7 +144,7 @@ def checkVerbs(raw, player, room):
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
     sub = ""  #Assignment Statement (3)
     pos = ""
-    count = 0
+    count = 0 #count is necessary to check if there is more than one object being input
     for word in raw: ##Nested Loops (12)
         # check if in room inventory
         for item in player.inventory:
