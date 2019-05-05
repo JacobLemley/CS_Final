@@ -131,7 +131,7 @@ def checkVerbs(raw, player, room):
     verbList = [["look", "see", "view", "inspect", "observe", "spot", "survey", "take in", "scan"], ["move", "change", "climb", "cross", "go", "leave", "proceed", "relocate", "walk", "run", "travel", "transport", "get away", "go away", "take off"], ["pick", "[ick up", "gather", "take up", "grasp", "hoist", "uplift", "uphold"], ["drop", "release", "lower", "relinquish", "unload", "bring down", "leave", "throw out"]]
     #list of lists of synonyms for each command ##A list that contains lists (20)
     # look, move, pick up, drop
-    verbDict = { "look":verbList[0], "move":verbList[1], "pick up":verbList[2], "drop":verbList[3] }
+    verbDict = { "look":verbList[0], "goTo":verbList[1], "pickup":verbList[2], "drop":verbList[3] }
     #matches each list of synonyms with a functions
 
     #for loop checking if synonym matches any list for each key
