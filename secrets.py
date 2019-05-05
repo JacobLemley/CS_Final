@@ -17,8 +17,8 @@ def displayMap(): #https://stackoverflow.com/questions/10133856/how-to-add-an-im
     root = tk.Tk()
     widget = tk.Label(root, compound='top')
     root.title("Project Flow Chart")
-    widget.flow_img_png = tk.PhotoImage(file="flow_chart.png")
-    widget['text'] ="oh wow look at this neato map \n Authors: Amna Tanveer, Jacob Lemley, Nachiket Vamshidhar, Kaitlin Forsythe" 
+    widget.flow_img_png = tk.PhotoImage(file="map.png")
+    widget['text'] ="oh wow look at this neato map \n Authors: Amna Tanveer, Jacob Lemley, Nachiket Vamshidhar, Kaitlin Forsythe"
     widget['image'] = widget.flow_img_png
     widget.pack()
     root.mainloop()

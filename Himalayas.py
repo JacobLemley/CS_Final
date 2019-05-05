@@ -125,7 +125,6 @@ def endGame():
 
 
 def checkVerbs(raw, player, room):
-
     verb = ""
     count = 0
     verbList = [["look", "see", "view", "inspect", "observe", "spot", "survey", "take in", "scan"], ["move", "change", "climb", "cross", "go", "leave", "proceed", "relocate", "walk", "run", "travel", "transport", "get away", "go away", "take off"], ["pick", "[ick up", "gather", "take up", "grasp", "hoist", "uplift", "uphold"], ["drop", "release", "lower", "relinquish", "unload", "bring down", "leave", "throw out"]]
