@@ -1,6 +1,6 @@
 --------------------The River--------------------
 INITIAL
-Welcome to the river! The water is rapidly rushing past you and splashing you as hits the nearby rocks.  It looks quite dangerous but you can see something across the river to the west that you can't quite make out.
+Welcome to the river! The water is rapidly rushing past you and splashing you as hits the nearby rocks.  It looks quite dangerous but somehow fish still manage to swim by you.  You can see something across the river to the west that you can't quite make out.
 NORMAL
 Welcome back to the river.  The well is still on the other side and the current is still strong.
 LOCATIONS
