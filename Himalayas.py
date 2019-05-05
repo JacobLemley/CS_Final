@@ -173,7 +173,6 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
             if word in item[0]:
                 sub = item[0]
                 pos = "room"
-                print(word)
         if verb == "goTo":
             for item in room.locations: #For loop (7)
                 if word in item[1]:
