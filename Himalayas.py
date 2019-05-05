@@ -172,21 +172,15 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
                 if word in item[1]:
                     sub = item[0]
                     count +=1
-            
+            if player.loc == "river" and word == "river":
+                sub = "well"
 
         if count > 1:
             sub = ""
     return sub, pos
 
+
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
-    normVerbList = ["drop", "pickup", "move"] #List (10)
-    # look, move, pickup, drop
-    count = 0
-    if verb in normVerbList:
-        '''if pos == player:
-            pickUp(rooms, player, subject)
-        if pos == rooms:'''
-        pass #check if pos = player or room, separate pickup and drop then either call drop or pickup with room, player, object, worry about move later
 
     if verb == "look" and subject != "":
         look(player, subject, pos)
@@ -205,19 +199,16 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
         print(fill("I don't understand what you want to do. Type HELP for a list of commands.", width=50))
 
     if verb == "pickup":
-        if subject in rooms[player.loc]: # if object is in the same location as player
-            if subject not in player.inventory: # probably not necessary but checks if player already has object
-                pickUp(rooms, player, subject)
+        if pos == rooms:
+            pickUp(rooms, player, subject)
         else:
             print(fill("The object you want to pickup is not in your location.", width=50))
 
-
     if verb == "drop":
-        if subject in player.inventory: # if object is in the player's inventory
-            if subject not in rooms[player.loc]: # again probably not necessary but checks if the object is not in the room
-                dropObj(rooms, player, subject)
+        if pos == inventory:
+            dropObj(rooms, player, subject)
         else:
-            print(fill("The item you want is not currently in your inventory.", width=50))
+            print("It is already in the room.")
 
 
 def checkInput(raw, player, rooms): #A function that calls another function (main not included) (5)
