@@ -108,7 +108,7 @@ def look(player, object, pos, rooms):
         for item in rooms[player.loc].objects:
             if item[0]==object:
                 print(item[1])
-    
+
 
 def lookAround(room, player):
     room.roomDescription()
@@ -188,8 +188,8 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
 
 
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
-    if verb == "use":
-        pass
+    if verb == "use" and subject == "phone":
+        usePhone(player)
 
     if verb == "look" and subject != "":
         look(player, subject, pos, rooms)
