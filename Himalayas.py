@@ -1,6 +1,7 @@
 from textwrap import fill  #https://pymotw.com/3/textwrap/
 from sys import exit
 import secrets as shh ##Import another Python file and use functionality (10) this is another python file in the same directory as the main script
+import random
 
 ''' Classes '''
 class Player: #class to store player data, like inventory, location, etc.
@@ -84,11 +85,11 @@ def goTo(room, player): #function to instantiate/change rooms
         print("You have entered the astral plane, good luck traveler")
 
 def dropObj(room, player, object):
+    print("dropped!")
     if item.name == object[1]:
         self.location.inventory.append(item)
         self.inventory.remove(item)
         print(fill("You dropped the " + str(item.name), width=50))
-        return
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
@@ -200,9 +201,9 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
         if subject == "":
                 print(fill("I don't understand where you want to go.", width=50))
         elif player.loc == "river" and subject == "well":
-            crossRiver(player, rooms)
+            crossRiver(player, rooms, subject)
         elif player.loc == "well":
-            crossRiver(player, rooms)
+            crossRiver(player, rooms, subject)
         else:
             goTo(rooms[subject], player)
 
@@ -237,16 +238,18 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
         subject, pos = checkSubject(raw, player, room, verb)
         sortCommand(player, rooms, verb, subject, pos)
 
-        
- def crossRiver(player, rooms):
+
+def crossRiver(player, rooms, subject):
     x = random.randrange(0, 5)
     room = rooms[player.loc]
-    if x == 3:
-        for x in player.inventory:
-            dropObj(room, player, x[0])
+    for n in player.inventory:
+        print(n)
 
-            
- def helpMe():
+    #else:
+        #goTo(rooms[subject], player)
+
+
+def helpMe():
     openHelp = open("help.txt", "r")
     print(openHelp.read())
 
