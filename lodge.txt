@@ -1,10 +1,11 @@
---------------------The Lodge--------------------
+--------------------TITLE OF ROOM--------------------
 INITIAL
-You walk down the path and see an abandoned rescue lodge with its door open. You enter and look around. There is path back to where you came. There is an old phone on the floor. 
+Welcome to the lodge! The flag atop the building reminds you of a shining beacon of hope, and while the lodge has for sure seen better days, it appears that it might still be helpful.  It is a bit dusty and you should be careful to not step through a hole in the floor, but feel free to explore the area.
 NORMAL
-You are back at the lodge. There is path to the north. 
+Welcome back to the lodge.  It is still dusty and still helpful, so be sure to explore.
 blah blah
 LOCATIONS
 yakshack:north
 OBJECTS
-phone:Looks like it needs some batteries. 
+phone:The phone may be old enough to still have an antennae, but it looks like it may work if used properly.
+flag:This flag likely served as a light at the end of the tunnel for travelers who came to the Himalayas in its peak.  The faded colors are indistinguishable but the flag still stands tall.
