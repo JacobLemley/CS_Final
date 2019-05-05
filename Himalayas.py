@@ -172,6 +172,7 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
                 if word in item[1]:
                     sub = item[0]
                     count +=1
+            
 
         if count > 1:
             sub = ""

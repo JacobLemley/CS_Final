@@ -1,14 +1,9 @@
---------------------TITLE OF ROOM--------------------
+--------------------Souvenir Shop--------------------
 INITIAL
-blah blah
-two lines blah blah
+[creative intro], there's some batteries here.
 NORMAL
-wow blah blah blah
-blah blah
+You are back at the souvenir shop.
 LOCATIONS
-location1
-location2
-location3
+sign:east
 OBJECTS
-object1:DESCRIPTION
-object2:DESCRIPTION
+batteries:They look fresh.

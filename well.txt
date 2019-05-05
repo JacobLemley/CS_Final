@@ -1,14 +1,9 @@
---------------------TITLE OF ROOM--------------------
+--------------------The Well--------------------
 INITIAL
-blah blah
-two lines blah blah
+You've crossed the river and come upon an old well. You see a block of Himalayan Salt beside the well. There are no paths to the north, east, or south.
 NORMAL
-wow blah blah blah
-blah blah
+You are back at the well.
 LOCATIONS
-location1
-location2
-location3
+river:west
 OBJECTS
-object1:DESCRIPTION
-object2:DESCRIPTION
+salt:It looks expensive.
