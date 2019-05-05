@@ -100,7 +100,7 @@ def pickUp(room, player, object):
     print(object[1] + " is not here!")
 
 def moveObj(room, player, object):
-    pass
+    pass #ambitious extra task never finished, F
 
 def look(player, object, pos, rooms):
     if pos=="player":
@@ -180,7 +180,6 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
                     count +=1
             if player.loc == "river" and word == "river":
                 sub = "well"
-
         if count > 1:
             sub = ""
     return sub, pos
@@ -253,12 +252,6 @@ def main(): #function definition and call (7)
     "well" : Room("well")
     }
     goTo(rooms["sign"], player1)
-    #rooms["yakshack"].title = "changed"
-    #print(rooms["yakshack"].title)
-    #print(rooms[player1.loc].filepath)
-    #yakshack = Room("yakshack")
-
-    #print(rooms[player1.loc].objects)
     while True: #While loop (7)
         try: #https://www.w3schools.com/python/python_try_except.asp ##Try/Except Block (15)
             checkInput(input().lower(), player1, rooms)
