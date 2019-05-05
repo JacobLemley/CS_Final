@@ -100,10 +100,16 @@ def moveObj(room, player, object):
     pass
 
 def look(player, object, pos):
-    pass
+    if pos=="player":
+        for item in player.inventory:
+            if item[0]==object:
+                print(item[1])
+    
+        
+            
 
 def lookAround(room, player):
-    pass
+    print(room.roomDescription())
 
 def usePhone(player): #hasn't been tested yet, just needed a home for the reference code
     if any("batteries" in s for s in player.inventory): #https://stackoverflow.com/questions/4843158/check-if-a-python-list-item-contains-a-string-inside-another-string
@@ -128,10 +134,10 @@ def checkVerbs(raw, player, room):
 
     verb = ""
     count = 0
-    verbList = [["look", "see", "view", "inspect", "observe", "spot", "survey", "take in", "scan"], ["goto", "move", "change", "climb", "cross", "go", "leave", "proceed", "relocate", "walk", "run", "travel", "transport", "get away", "go away", "take off"], ["pick", "[ick up", "gather", "take up", "grasp", "hoist", "uplift", "uphold"], ["drop", "release", "lower", "relinquish", "unload", "bring down", "leave", "throw out"]]
+    verbList = [["look", "see", "view", "inspect", "observe", "spot", "survey", "take in", "scan"], ["move", "change", "climb", "cross", "go", "leave", "proceed", "relocate", "walk", "run", "travel", "transport", "get away", "go away", "take off"], ["pick", "[ick up", "gather", "take up", "grasp", "hoist", "uplift", "uphold"], ["drop", "release", "lower", "relinquish", "unload", "bring down", "leave", "throw out"]]
     #list of lists of synonyms for each command ##A list that contains lists (20)
-    # look, go to, pick up, drop
-    verbDict = { "look":verbList[0], "goto":verbList[1], "pickup":verbList[2], "drop":verbList[3] }
+    # look, move, pick up, drop
+    verbDict = { "look":verbList[0], "goTo":verbList[1], "pickup":verbList[2], "drop":verbList[3] }
     #matches each list of synonyms with a functions
 
     #for loop checking if synonym matches any list for each key
