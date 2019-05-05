@@ -99,7 +99,7 @@ def pickUp(room, player, object):
 def moveObj(room, player, object):
     pass
 
-def look(player, object):
+def look(player, object, pos):
     pass
 
 def lookAround(room, player):
@@ -178,7 +178,7 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
     return sub, pos
 
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
-    normVerbList = ["drop", "pickup", "move", "look"] #List (10)
+    normVerbList = ["drop", "pickup", "move"] #List (10)
     # look, move, pickup, drop
     count = 0
     if verb in normVerbList:
@@ -188,10 +188,7 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
         pass #check if pos = player or room, separate pickup and drop then either call drop or pickup with room, player, object, worry about move later
 
     if verb == "look" and subject != "":
-        if subject in player.loc[object]:
-            look(player, subject)
-        else:
-            print(fill("The object you want to look at is not at your current location.", width=50))
+        look(player, subject, pos)
         #pass room, player, object to look function
 
     if verb == "look" and subject == "":
