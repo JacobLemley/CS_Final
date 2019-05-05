@@ -151,9 +151,6 @@ def checkVerbs(raw, player, room):
         if word == "use":
             verb = word
             count += 1
-        if word == "cross":
-            verb = word
-            count += 1
     # needs an error print message for too many verbs in the input
     if count ==1 :
         return verb
@@ -204,6 +201,10 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
     if verb == "goTo":
         if subject == "":
                 print(fill("I don't understand where you want to go.", width=50))
+        elif player.loc == "river" and subject == "well":
+            crossRiver(player, rooms)
+        elif player.loc == "well":
+            crossRiver(player, rooms)
         else:
             goTo(rooms[subject], player)
 
@@ -218,9 +219,6 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
             dropObj(rooms, player, subject)
         else:
             print("It is already in the room.")
-
-    if verb == "cross":
-        crossRiver(player, rooms)
 
     if verb == "":
         print(fill("I don't understand what you want to do. Type HELP for a list of commands.", width=50))
