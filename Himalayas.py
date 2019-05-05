@@ -100,10 +100,13 @@ def moveObj(room, player, object):
     pass
 
 def look(player, object, pos):
-    pass
+    if pos=="player":
+        for item in player.inventory:
+            if item[0]==object:
+                print(item[1])
 
 def lookAround(room, player):
-    pass
+    room.roomDescription()
 
 def usePhone(player): #hasn't been tested yet, just needed a home for the reference code
     if any("batteries" in s for s in player.inventory): #https://stackoverflow.com/questions/4843158/check-if-a-python-list-item-contains-a-string-inside-another-string
@@ -138,7 +141,7 @@ def checkVerbs(raw, player, room):
             if word in v: # goes through each string in the list at dictionary key k
                 verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
                 count += 1
-        if word = "use":
+        if word == "use":
             verb = word
             count += 1
     # needs an error print message for too many verbs in the input
