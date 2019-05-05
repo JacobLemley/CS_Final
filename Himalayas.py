@@ -207,16 +207,16 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
             goTo(rooms[subject], player)
 
     if verb == "pickup":
-        if pos == rooms:
+        if pos == "rooms":
             pickUp(rooms, player, subject)
         else:
             print(fill("The object you want to pickup is not in your location.", width=50))
 
     if verb == "drop":
-        if pos == inventory:
+        if pos == "inventory":
             dropObj(rooms, player, subject)
         else:
-            print("It is already in the room.")
+            print("You can't drop that.")
 
     if verb == "":
         print(fill("I don't understand what you want to do. Type HELP for a list of commands.", width=50))
