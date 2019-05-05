@@ -2,6 +2,7 @@ from textwrap import fill  #https://pymotw.com/3/textwrap/
 from sys import exit
 import secrets as shh ##Import another Python file and use functionality (10) this is another python file in the same directory as the main script
 
+''' Classes '''
 class Player: #class to store player data, like inventory, location, etc.
     def __init__(self):
         self.name = ""
@@ -70,6 +71,8 @@ class Room: #A Class (20)
             print(fill(objstr, width=50))
 
 
+''' Functions that change environment: '''
+
 def goTo(room, player): #function to instantiate/change rooms
     try:
         player.loc = room.name
@@ -109,7 +112,6 @@ def look(player, object, pos, rooms):
             if item[0]==object:
                 print(item[1])
 
-
 def lookAround(room, player):
     room.roomDescription()
 
@@ -131,6 +133,7 @@ def endGame():
     else:
         exit() #https://stackoverflow.com/questions/73663/terminating-a-python-script
 
+'''Input analysis functions'''
 
 def checkVerbs(raw, player, room):
     verb = ""
@@ -140,7 +143,6 @@ def checkVerbs(raw, player, room):
     # look, move, pick up, drop
     verbDict = { "look":verbList[0], "goTo":verbList[1], "pickup":verbList[2], "drop":verbList[3] }
     #matches each list of synonyms with a functions
-
     for word in raw: #goes through each word in the list of strings provided by the input
         for k, v in verbDict.items():#goes through each key and list in the dictionary
             if word in v: # goes through each string in the list at dictionary key k
@@ -156,8 +158,6 @@ def checkVerbs(raw, player, room):
         print("Your statement does not have an action.  Please try again.")
     if count > 1:
         print("You have too many actions.  Please choose one at a time.")
-
-
 
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
     sub = ""  #Assignment Statement (3)
