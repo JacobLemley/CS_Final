@@ -125,20 +125,32 @@ def endGame():
 
 
 def checkVerbs(raw, player, room):
+
     verb = ""
     count = 0
-    verbList = [["go", "head", "travel"]] #list of lists of synonyms for each command ##A list that contains lists (20)
-    verbDict = { #matches each list of synonyms with a functions
-    "goTo" : verbList[0],
-    }
+    verbList = [["look", "see", "view", "inspect", "observe", "spot", "survey", "take in", "scan"], ["move", "change", "climb", "cross", "go", "leave", "proceed", "relocate", "walk", "run", "travel", "transport", "get away", "go away", "take off"], ["pick", "[ick up", "gather", "take up", "grasp", "hoist", "uplift", "uphold"], ["drop", "release", "lower", "relinquish", "unload", "bring down", "leave", "throw out"]]
+    #list of lists of synonyms for each command ##A list that contains lists (20)
+    # look, move, pick up, drop
+    verbDict = { "look":verbList[0], "move":verbList[1], "pick up":verbList[2], "drop":verbList[3] }
+    #matches each list of synonyms with a functions
+
     #for loop checking if synonym matches any list for each key
-    for word in raw: #goes through each word in the list of strings provided by the input
-        for k, v in verbDict.items():#goes through each key and list in the dictionary
-            if word in v: # goes through each string in the list at dictionary key k
-                verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
-                count += 1
-    if count > 1:
-        pass # needs an error print message for too many verbs in the input
+    while True:
+        for word in raw: #goes through each word in the list of strings provided by the input
+            for k, v in verbDict.items():#goes through each key and list in the dictionary
+                if word in v: # goes through each string in the list at dictionary key k
+                    verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
+                    count += 1
+        if count == 1:
+            break
+        # needs an error print message for too many verbs in the input
+        if count == 0:
+            print("Your statement does not have an action.  Please try again.")
+            raw = input(" ")
+        if count > 1:
+            print("You have too many actions.  Please choose one at a time.")
+            raw = input(" ")
+
     return verb
 
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
@@ -166,21 +178,48 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
     return sub, pos
 
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
-    normVerbList = ["drop", "pickup", "move"] #List (10)
+    normVerbList = ["drop", "pickup", "move", "look"] #List (10)
+    # look, move, pickup, drop
     count = 0
     if verb in normVerbList:
+        '''if pos == player:
+            pickUp(rooms, player, subject)
+        if pos == rooms:'''
         pass #check if pos = player or room, separate pickup and drop then either call drop or pickup with room, player, object, worry about move later
+
     if verb == "look" and subject != "":
-        pass #pass room, player, object to look function
+        if subject in player.loc[object]:
+            look(player, subject)
+        else:
+            print(fill("The object you want to look at is not at your current location.", width=50))
+        #pass room, player, object to look function
+
     if verb == "look" and subject == "":
         lookAround(rooms[player.loc], player) #pass room and player to lookAround function
+
     if verb == "goTo":
         if subject == "":
                 print(fill("I don't understand where you want to go.", width=50))
         else:
             goTo(rooms[subject], player)
+
     if verb == "":
         print(fill("I don't understand what you want to do. Type HELP for a list of commands.", width=50))
+
+    if verb == "pickup":
+        if subject in rooms[player.loc]: # if object is in the same location as player
+            if subject not in player.inventory: # probably not necessary but checks if player already has object
+                pickUp(rooms, player, subject)
+        else:
+            print(fill("The object you want to pickup is not in your location.", width=50))
+
+
+    if verb == "drop":
+        if subject in player.inventory: # if object is in the player's inventory
+            if subject not in rooms[player.loc]: # again probably not necessary but checks if the object is not in the room
+                dropObj(rooms, player, subject)
+        else:
+            print(fill("The item you want is not currently in your inventory.", width=50))
 
 
 def checkInput(raw, player, rooms): #A function that calls another function (main not included) (5)
@@ -191,7 +230,7 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
     if "exit" in raw: #If Statement (5)
         endGame()
     elif "help" in raw:
-        help()
+        helpMe()
     elif "map" in raw:
         shh.displayMap()
     else:
@@ -199,7 +238,7 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
         subject, pos = checkSubject(raw, player, room, verb)
         sortCommand(player, rooms, verb, subject, pos)
 
-def help():
+def helpMe():
     openHelp = open("help.txt", "r")
     print(openHelp.read())
 
