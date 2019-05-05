@@ -1,9 +1,11 @@
---------------------River--------------------
+--------------------The River--------------------
 INITIAL
-[creative intro] There is a path to your east and west. The river looks spooky, it might be difficult to cross. 
+Welcome to the river! The water is rapidly rushing past you and splashing you as hits the nearby rocks.  It looks quite dangerous but you can see something across the river that you can't quite make out.
 NORMAL
-You're back at the river. There is a path to your east and west.
+Welcome back to the river.  The well is still on the other side and the current is still strong.
 LOCATIONS
 well:west
 sign:east
 OBJECTS
+rock:There is a really nice rock that is quite pretty and shows some good old sedimentary layers.  Depending on how into rocks you are, you may want to carry it around with you to bring to your people back home.
+fish:There are fish in the river.  If you want to try to grab one from the river, be might guest.  Might stink up your inventory, but might taste good in a pinch.
