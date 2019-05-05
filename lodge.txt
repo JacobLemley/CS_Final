@@ -1,4 +1,4 @@
---------------------TITLE OF ROOM--------------------
+--------------------The Lodge--------------------
 INITIAL
 Welcome to the lodge! The flag atop the building reminds you of a shining beacon of hope, and while the lodge has for sure seen better days, it appears that it might still be helpful.  It is a bit dusty and you should be careful to not step through a hole in the floor, but feel free to explore the area.
 NORMAL
