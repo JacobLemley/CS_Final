@@ -99,11 +99,16 @@ def pickUp(room, player, object):
 def moveObj(room, player, object):
     pass
 
-def look(player, object, pos):
+def look(player, object, pos, rooms):
     if pos=="player":
         for item in player.inventory:
             if item[0]==object:
                 print(item[1])
+    if pos=="room":
+        for item in rooms[player.loc].objects:
+            if item[0]==object:
+                print(item[1])
+    
 
 def lookAround(room, player):
     room.roomDescription()
@@ -187,7 +192,7 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
         pass
 
     if verb == "look" and subject != "":
-        look(player, subject, pos)
+        look(player, subject, pos, rooms)
         #pass room, player, object to look function
 
     if verb == "look" and subject == "":
