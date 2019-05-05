@@ -2,10 +2,10 @@
 INITIAL
 You wake up -- on an icy ground to a cold breeze gushing at you from every direction, the air is dry. You look up and there are mountain ranges surrounding you from lengths of 2,400 km. The feeling of confusion is creeping up on you -- "how did I get here?" A wooden board on your far left says, "Welcome to the Himalayas," but there is no one to be found. The view is beautiful yet ominous since ice caps are melting around you and the famous Himalayan black-necked cranes skull is surrounding you in masses. You find yourself in loss of words as you see a village flooded from afar.
 NORMAL
-You are back at the sign.
+You are back at the sign. There is a path to your south, west, and east.
 LOCATIONS
-river:east
-souvenir:west
+river:west
+souvenir:east
 yakshack:south
 OBJECTS
 crown:The crown is no longer shiny and is missing all its jewels, but is still nice to look at.

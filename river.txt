@@ -1,14 +1,9 @@
---------------------TITLE OF ROOM--------------------
+--------------------River--------------------
 INITIAL
-blah blah
-two lines blah blah
+[creative intro] There is a path to your east and west. The river looks spooky, it might be difficult to cross. 
 NORMAL
-wow blah blah blah
-blah blah
+You're back at the river. There is a path to your east and west.
 LOCATIONS
-location1
-location2
-location3
+well:west
+sign:east
 OBJECTS
-object1:DESCRIPTION
-object2:DESCRIPTION

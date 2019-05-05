@@ -4,6 +4,6 @@ INITIAL
 NORMAL
 You are back at the souvenir shop.
 LOCATIONS
-sign:east
+sign:west
 OBJECTS
 batteries:They look fresh.

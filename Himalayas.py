@@ -134,24 +134,21 @@ def checkVerbs(raw, player, room):
     verbDict = { "look":verbList[0], "goTo":verbList[1], "pickup":verbList[2], "drop":verbList[3] }
     #matches each list of synonyms with a functions
 
-    #for loop checking if synonym matches any list for each key
-    while True:
-        for word in raw: #goes through each word in the list of strings provided by the input
-            for k, v in verbDict.items():#goes through each key and list in the dictionary
-                if word in v: # goes through each string in the list at dictionary key k
-                    verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
-                    count += 1
-        if count == 1:
-            break
-        # needs an error print message for too many verbs in the input
-        if count == 0:
-            print("Your statement does not have an action.  Please try again.")
-            raw = input(" ")
-        if count > 1:
-            print("You have too many actions.  Please choose one at a time.")
-            raw = input(" ")
+    for word in raw: #goes through each word in the list of strings provided by the input
+        for k, v in verbDict.items():#goes through each key and list in the dictionary
+            if word in v: # goes through each string in the list at dictionary key k
+                verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
+                count += 1
 
-    return verb
+    # needs an error print message for too many verbs in the input
+    if count ==1 :
+        return verb
+    if count == 0:
+        print("Your statement does not have an action.  Please try again.")
+    if count > 1:
+        print("You have too many actions.  Please choose one at a time.")
+
+
 
 def checkSubject(raw, player, room, verb): #Function Definition with Parameters and Function Call (10)
     sub = ""  #Assignment Statement (3)
@@ -167,6 +164,7 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
             if word in item[0]:
                 sub = item[0]
                 pos = "room"
+                print(word)
         if verb == "goTo":
             for item in room.locations: #For loop (7)
                 if word in item[1]:

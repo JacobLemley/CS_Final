@@ -4,6 +4,6 @@ You've crossed the river and come upon an old well. You see a block of Himalayan
 NORMAL
 You are back at the well.
 LOCATIONS
-river:west
+river:east
 OBJECTS
 salt:It looks expensive.

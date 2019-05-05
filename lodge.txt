@@ -1,14 +1,10 @@
---------------------TITLE OF ROOM--------------------
+--------------------The Lodge--------------------
 INITIAL
-blah blah
-two lines blah blah
+You walk down the path and see an abandoned rescue lodge with its door open. You enter and look around. There is path back to where you came. There is an old phone on the floor. 
 NORMAL
-wow blah blah blah
+You are back at the lodge. There is path to the north. 
 blah blah
 LOCATIONS
-location1
-location2
-location3
+yakshack:north
 OBJECTS
-object1:DESCRIPTION
-object2:DESCRIPTION
+phone:Looks like it needs some batteries. 
