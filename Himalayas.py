@@ -138,7 +138,9 @@ def checkVerbs(raw, player, room):
             if word in v: # goes through each string in the list at dictionary key k
                 verb = k # sets the verb to the key in the dictionary if any of the words in the synonym list matches the input
                 count += 1
-
+        if word = "use":
+            verb = word
+            count += 1
     # needs an error print message for too many verbs in the input
     if count ==1 :
         return verb
@@ -178,6 +180,8 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
 
 
 def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb options to check for continuity
+    if verb == "use":
+        pass
 
     if verb == "look" and subject != "":
         look(player, subject, pos)
