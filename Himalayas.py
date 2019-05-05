@@ -237,7 +237,16 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
         subject, pos = checkSubject(raw, player, room, verb)
         sortCommand(player, rooms, verb, subject, pos)
 
-def helpMe():
+        
+ def crossRiver(player, rooms):
+    x = random.randrange(0, 5)
+    room = rooms[player.loc]
+    if x == 3:
+        for x in player.inventory:
+            dropObj(room, player, x[0])
+
+            
+ def helpMe():
     openHelp = open("help.txt", "r")
     print(openHelp.read())
 
