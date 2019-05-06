@@ -66,8 +66,10 @@ class Room: #A Class (20)
         for i in self.objects:
             if self.objects.index(i) != len(self.objects)-1:
                 objstr = objstr + i[0] + ", "
-            else:
+            elif len(self.objects) > 1:
                 objstr = objstr + "and " + i[0] + " in here."
+            else:
+                objstr = objstr + i[0] + " in here." 
         if len(self.objects) > 0 : #Using len with a purpose (and not within a different piece of code you are getting points for) (2)
             print(fill(objstr, width=50))
 
@@ -85,7 +87,6 @@ def goTo(room, player): #function to instantiate/change rooms
         print("You have entered the astral plane, good luck traveler")
 
 def dropObj(room, player, object):
-    print("dropped!")
     if item.name == object[1]:
         self.location.inventory.append(item)
         self.inventory.remove(item)
@@ -242,11 +243,16 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
 def crossRiver(player, rooms, subject):
     x = random.randrange(0, 5)
     room = rooms[player.loc]
-    for n in player.inventory:
-        print(n)
+    if x == 3:
+        print(fill("You slipped and fell in the river!", width=50))
+        if len(player.inventory) > 0:
+            for n in player.inventory:
+                dropObj(room, player, n[0])
+        else:
+            print(fill("Luckily you're completely broke so you lost nothing, but you failed to cross the river.", width=50))
 
-    #else:
-        #goTo(rooms[subject], player)
+    else:
+        goTo(rooms[subject], player)
 
 
 def helpMe():
