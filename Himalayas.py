@@ -96,7 +96,7 @@ def dropObj(room, player, object):
         if item == object[1]:
             room.location.append(item)
             player.inventory.remove(item)
-            print(fill("You dropped the " + str(item.name), width=50))
+            print(fill("You dropped the " + str(item), width=50))
             return
 >>>>>>> 3d9e184fd4b02ea15a41b87cb166301da15ef319
     print(object[1] + " is not here!")
@@ -106,7 +106,7 @@ def pickUp(room, player, object):
         if item == object[1]:
             player.inventory.append(item)
             room.location.remove(item)
-            print("You picked up the", item.name)
+            print("You picked up the", item)
     print(object[1] + " is not here!")
 
 def moveObj(room, player, object):
