@@ -90,7 +90,8 @@ def dropObj(room, player, object):
         if item == object[1]:
             room.location.append(item)
             player.inventory.remove(item)
-            print(fill("You dropped the " + str(item.name), width=50))
+            print(fill("You dropped the " + str(item), width=50))
+>>>>>>> b24a8fab173e84513cf7c55e5c872c1c5ace9d12
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
@@ -98,7 +99,7 @@ def pickUp(room, player, object):
         if item == object[1]:
             player.inventory.append(item)
             room.location.remove(item)
-            print("You picked up the", item.name)
+            print("You picked up the", item)
     print(object[1] + " is not here!")
 
 def moveObj(room, player, object):
@@ -252,7 +253,7 @@ def crossRiver(player, rooms, subject):
 
     else:
         goTo(rooms[subject], player)
-        
+
 def helpMe():
     openHelp = open("help.txt", "r")
     print(openHelp.read())
