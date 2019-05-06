@@ -6,7 +6,7 @@ import secrets as shh ##Import another Python file and use functionality (10) th
 class Player: #class to store player data, like inventory, location, etc.
     def __init__(self):
         self.name = ""
-        self.inventory = []
+        self.inventory = [["phone", "desc."], ["notphone", "desc."]]
         self.loc = "sign"
 
 
@@ -68,7 +68,7 @@ class Room: #A Class (20)
             elif len(self.objects) > 1:
                 objstr = objstr + "and " + i[0] + " in here."
             else:
-                objstr = objstr + i[0] + " in here." 
+                objstr = objstr + i[0] + " in here."
         if len(self.objects) > 0 : #Using len with a purpose (and not within a different piece of code you are getting points for) (2)
             print(fill(objstr, width=50))
 
@@ -86,19 +86,11 @@ def goTo(room, player): #function to instantiate/change rooms
         print("You have entered the astral plane, good luck traveler")
 
 def dropObj(room, player, object):
-<<<<<<< HEAD
-    if item.name == object[1]:
-        self.location.inventory.append(item)
-        self.inventory.remove(item)
-        print(fill("You dropped the " + str(item.name), width=50))
-=======
-    for item in player.inventory:     
+    for item in player.inventory:
         if item == object[1]:
             room.location.append(item)
             player.inventory.remove(item)
             print(fill("You dropped the " + str(item.name), width=50))
-            return
->>>>>>> 3d9e184fd4b02ea15a41b87cb166301da15ef319
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
@@ -247,8 +239,6 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
         subject, pos = checkSubject(raw, player, room, verb)
         sortCommand(player, rooms, verb, subject, pos)
 
-<<<<<<< HEAD
-
 def crossRiver(player, rooms, subject):
     x = random.randrange(0, 5)
     room = rooms[player.loc]
@@ -262,10 +252,7 @@ def crossRiver(player, rooms, subject):
 
     else:
         goTo(rooms[subject], player)
-
-
-=======
->>>>>>> 3d9e184fd4b02ea15a41b87cb166301da15ef319
+        
 def helpMe():
     openHelp = open("help.txt", "r")
     print(openHelp.read())
@@ -281,6 +268,7 @@ def main(): #function definition and call (7)
     "well" : Room("well")
     }
     goTo(rooms["sign"], player1)
+    shh.checkScore("Test", player1.inventory)
     while True: #While loop (7)
         try: #https://www.w3schools.com/python/python_try_except.asp ##Try/Except Block (15)
             checkInput(input().lower(), player1, rooms)

@@ -8,7 +8,7 @@ def checkScore(name, objList):
         elif(item[0]=="phone"):
             score+=10
     fileToWrite = open("highscore.txt","w")
-    fileToWrite.write(name+":"+score)
+    fileToWrite.write(name+":"+str(score))
     fileToWrite.close()
     fileToRead = open("highscore.txt","r")
     b = []
