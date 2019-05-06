@@ -1,5 +1,5 @@
 ---------------------------------------Help!---------------------------------------
-Welcome to your help functionality!
+Hello,welcome to your help functionality!
 
 Your four main functions are:
     - pick up an object
