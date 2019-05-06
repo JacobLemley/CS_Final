@@ -28,7 +28,7 @@ def checkHighScore(b):
                 b[i][0] = b[j][0]
                 b[j][1] = temp
                 b[j][0] = tempname
-    print("The top 3 players are {0},{1},{3}".format(b[0][0],b[1][0],b[2][0]))                
+    print("The top 3 players are {0},{1},{2}".format(b[0][0],b[1][0],b[2][0]))                
     
 
 def displayMap(): #https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
