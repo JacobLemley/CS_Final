@@ -91,7 +91,6 @@ def dropObj(room, player, object):
             room.location.append(item)
             player.inventory.remove(item)
             print(fill("You dropped the " + str(item), width=50))
->>>>>>> b24a8fab173e84513cf7c55e5c872c1c5ace9d12
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
