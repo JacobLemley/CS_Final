@@ -1,6 +1,7 @@
 from textwrap import fill  #https://pymotw.com/3/textwrap/
 from sys import exit
 import secrets as shh ##Import another Python file and use functionality (10) this is another python file in the same directory as the main script
+import random
 
 ''' Classes '''
 class Player: #class to store player data, like inventory, location, etc.
@@ -87,19 +88,17 @@ def goTo(room, player): #function to instantiate/change rooms
 
 def dropObj(room, player, object):
     for item in player.inventory:
-        if item == object[1]:
-            room.location.append(item)
+        if item[0] == object:
+            room.objects.append(item)
             player.inventory.remove(item)
-            print(fill("You dropped the " + str(item), width=50))
-    print(object[1] + " is not here!")
+            print(fill("You dropped the " + object + ".", width=50))
 
 def pickUp(room, player, object):
-    for item in room.locations:
-        if item == object[1]:
+    for item in room.objects:
+        if item[0] == object:
             player.inventory.append(item)
-            room.location.remove(item)
-            print("You picked up the", item)
-    print(object[1] + " is not here!")
+            room.objects.remove(item)
+            print(fill("You picked up the " + object + ".", width=50))
 
 def moveObj(room, player, object):
     pass #ambitious extra task never finished, F
@@ -170,7 +169,7 @@ def checkSubject(raw, player, room, verb): #Function Definition with Parameters 
         for item in player.inventory:
             if word in item[0]:
                 sub = item[0]
-                pos = "player"
+                pos = "inventory"
         for item in room.objects: ##Python code that “walks” through the contents of an List (or other data structure) (7)
             if word in item[0]:
                 sub = item[0]
@@ -202,21 +201,21 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
         if subject == "":
                 print(fill("I don't understand where you want to go.", width=50))
         elif player.loc == "river" and subject == "well":
-            crossRiver(player, rooms)
+            crossRiver(player, rooms, subject)
         elif player.loc == "well":
-            crossRiver(player, rooms)
+            crossRiver(player, rooms, subject)
         else:
             goTo(rooms[subject], player)
 
     if verb == "pickup":
-        if pos == rooms:
-            pickUp(rooms, player, subject)
+        if pos == "room":
+            pickUp(rooms[player.loc], player, subject)
         else:
             print(fill("The object you want to pickup is not in your location.", width=50))
 
     if verb == "drop":
-        if pos == inventory:
-            dropObj(rooms, player, subject)
+        if pos == "inventory":
+            dropObj(rooms[player.loc], player, subject)
         else:
             print("It is already in the room.")
 
@@ -268,7 +267,7 @@ def main(): #function definition and call (7)
     "well" : Room("well")
     }
     goTo(rooms["sign"], player1)
-    shh.checkScore("Test", player1.inventory)
+    print(player1.inventory)
     while True: #While loop (7)
         try: #https://www.w3schools.com/python/python_try_except.asp ##Try/Except Block (15)
             checkInput(input().lower(), player1, rooms)
