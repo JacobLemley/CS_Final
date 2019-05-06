@@ -1,9 +1,11 @@
 --------------------Souvenir Shop--------------------
 INITIAL
-[creative intro], there's some batteries here.
+Welcome to the souvenir shop! There's lots of weird old things in here, like a crystal ball and a fossil.  There is one thing that looks fresh, which are the batteries.  Random.
 NORMAL
-You are back at the souvenir shop.
+You are back at the souvenir shop. Welcome.
 LOCATIONS
 sign:west
 OBJECTS
-batteries:They look fresh.
+batteries:They're fresh for sure.
+crystallball:It's purple and swirly but you don't know how to read it like a real psychic could.
+fossil:It's petrified and is for sure old.  Its age is probably higher than you can count.  Looks like a fossil of some kind of crane foot.  Dang cranes.
