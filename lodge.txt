@@ -6,6 +6,6 @@ Welcome back to the lodge.  It is still dusty and still helpful, so be sure to e
 LOCATIONS
 yakshack:north
 OBJECTS
-phone:The phone may be old enough to still need to be attached to a wall, but it looks like it may work if used properly.
+phone:The phone may be old enough to still need to be attached to a wall, but it looks like it may work if used properly.  Do you have friends or family you could call? You might want to try ...
 flag:This flag likely served as a light at the end of the tunnel for travelers who came to the Himalayas in its peak.  The faded colors are indistinguishable but the flag still stands tall.
 dictionary:Remember when teachers used to tell you to look up a word in the dictionary to figure out how to spell it, but you could never find the word since you didn't know how to spell it.  Me neither.  Also it's old and tattered.
