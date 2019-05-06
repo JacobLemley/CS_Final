@@ -7,9 +7,6 @@ def checkScore(name, objList):
             score+=3
         elif(item[0]=="phone"):
             score+=10
-    fileToWrite = open("highscore.txt","w")
-    fileToWrite.write(name+":"+str(score))
-    fileToWrite.close()
     fileToRead = open("highscore.txt","r")
     b = []
     for line in fileToRead:
@@ -19,16 +16,19 @@ def checkScore(name, objList):
 
 
 def checkHighScore(b):
-    for i in range(0,len(b)):
-        for j in range(i,len(b)):
-            if b[j][1]<b[i][1]:
-                temp = b[i][1]
-                tempname = b[i][0]
-                b[i][1] = b[j][1]
-                b[i][0] = b[j][0]
-                b[j][1] = temp
-                b[j][0] = tempname
-    print("The top 3 players are {0},{1},{2}".format(b[0][0],b[1][0],b[2][0]))
+    if(len(b)==1):
+        print("The top player is {0}".format(b[0][0]))
+    else:
+        for i in range(0,len(b)):
+            for j in range(i,len(b)):
+                if b[j][1]<b[i][1]:
+                    temp = b[i][1]
+                    tempname = b[i][0]
+                    b[i][1] = b[j][1]
+                    b[i][0] = b[j][0]
+                    b[j][1] = temp
+                    b[j][0] = tempname
+        print("The top 2 players are {0},{1}".format(b[0][0],b[1][0]))
 
 
 def displayMap(): #https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
