@@ -7,15 +7,37 @@ def checkScore(name, objList):
             score+=3
         elif(item[0]=="phone"):
             score+=10
-    fileToRead = open("highscore.txt","r")
+    checkHighScore(name, score)
+
+def checkHighScore(name, score):
+    file = open("highscore.txt","r")
     b = []
-    for line in fileToRead:
-        b.append(line.split(":"))
-    fileToRead.close()
-    checkHighScore(b)
+    for line in file:
+        line = line.split(":")
+        line[1] = int(line[1])
+        b.append(line)
+    file.close()
+    count = 0
+    for x in b:
+        if x[1] <= score and count == 0:
+            b.insert(b.index(x), [name, score])
+            del b[3:]
+            count +=1
+    if count == 1:
+        addHighScore(name, score, b)
+        #addHighscore(name, score, b)
+    else:
+        print("Score: {0} \n Sorry, you didn't get a highscore.".format(score))
+        print("HIGHSCORES:\n{}:{}\n{}:{}\n{}:{}".format(b[0][0],b[0][1],b[1][0],b[1][1],b[2][0],b[2][1]))
 
 
-def checkHighScore(b):
+def addHighScore(name, score, b):
+    f = open("highscore.txt", "w")
+    for item in b:
+        f.writelines(item[0] + ":" + str(item[1]) + "\n")
+    f.close()
+    print("HIGHSCORES:\n{}:{}\n{}:{}\n{}:{}".format(b[0][0],b[0][1],b[1][0],b[1][1],b[2][0],b[2][1]))
+    '''
     if(len(b)==1):
         print("The top player is {0}".format(b[0][0]))
     else:
@@ -29,7 +51,7 @@ def checkHighScore(b):
                     b[j][1] = temp
                     b[j][0] = tempname
         print("The top 2 players are {0},{1}".format(b[0][0],b[1][0]))
-
+    '''
 
 def displayMap(): #https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
     root = tk.Tk()

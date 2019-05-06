@@ -7,7 +7,7 @@ import random
 class Player: #class to store player data, like inventory, location, etc.
     def __init__(self):
         self.name = ""
-        self.inventory = [["batteries", "desc."]]
+        self.inventory = []
         self.loc = "sign"
 
 
@@ -119,11 +119,10 @@ def lookAround(room, player):
 def usePhone(player): #hasn't been tested yet, just needed a home for the reference code
     if any("batteries" in s for s in player.inventory): #https://stackoverflow.com/questions/4843158/check-if-a-python-list-item-contains-a-string-inside-another-string
         phoneNum = str(input("Enter the phone number you would like to call for help: "))
-        if len(phoneNum) == 10 or len(phoneNum) == 11:
+        if len(phoneNum) == 10 or len(phoneNum) == 11: #Nested if statement (7)
             player.name = str(input("What is your name?"))
-            score = shh.checkScore(player.name, player.inventory)
-            print(score)
-            endGame()  #Nested if statement (7)
+            shh.checkScore(player.name, player.inventory)
+            endGame()
     else:
         print("It looks like the batteries are dead.") ##print() statement (2)
 
@@ -267,7 +266,6 @@ def main(): #function definition and call (7)
     "well" : Room("well")
     }
     goTo(rooms["sign"], player1)
-    print(player1.inventory)
     while True: #While loop (7)
         try: #https://www.w3schools.com/python/python_try_except.asp ##Try/Except Block (15)
             checkInput(input().lower(), player1, rooms)

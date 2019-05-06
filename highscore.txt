@@ -1,4 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 2c8d941ed53c62e4e18551c1ac1c99d2946cf056
+Jacob:0
+Katie:0
+Nachiket:0
