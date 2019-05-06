@@ -95,7 +95,7 @@ def dropObj(room, player, object):
 def pickUp(room, player, object):
     for item in room.locations:
         if item == object[1]:
-            self.inventory.append(item)
+            player.inventory.append(item)
             room.location.remove(item)
             print("You picked up the", item.name)
     print(object[1] + " is not here!")
