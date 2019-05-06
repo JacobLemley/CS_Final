@@ -1,11 +1,10 @@
 --------------------Yak Shack--------------------
 INITIAL
-You hear sounds of the long-haired domesticated bovid known as the domestic yak. It smells of yak. You see an old boarded up shack
-behind the yaks. There is a path to the north and south. You see an old artisan pitchfork laying in the grass. 
+You have reached the yak shack.  You hear sounds of the long-haired domesticated bovid known as the domestic yak. It smells of yak. You see an old boarded up shack behind the yaks. There is a path to the north and south. You see an old artisan pitchfork laying in the grass. 
 NORMAL
-You are back at the yakshak. 
+You are back at the yakshak. Welcome.
 LOCATIONS
 sign:north
 lodge:south
 OBJECTS
-pitchfork:It looks rustic, I bet you could sell this on South Congress. 
+pitchfork:It looks rustic, I bet you could sell this at an antique shop on South Congress.
