@@ -7,7 +7,7 @@ import random
 class Player: #class to store player data, like inventory, location, etc.
     def __init__(self):
         self.name = ""
-        self.inventory = [["phone", "desc."], ["notphone", "desc."]]
+        self.inventory = [["batteries", "desc."]]
         self.loc = "sign"
 
 
