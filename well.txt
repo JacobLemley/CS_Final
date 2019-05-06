@@ -1,9 +1,9 @@
 --------------------The Well--------------------
 INITIAL
-You've crossed the river and come upon an old well. You see a block of Himalayan Salt beside the well. There are no paths to the north, east, or south.
+You've crossed the river and come upon an old well.  It is old and creaky.  You see a block of Himalayan Salt beside the well. There are no paths to the north, east, or south.
 NORMAL
-You are back at the well.
+Welcome back to the well.  You're still cold.
 LOCATIONS
 river:east
 OBJECTS
-salt:It looks expensive.
+salt:It looks expensive.  Probably Whole Foods quality.  You could make some money off this if you bring it home.

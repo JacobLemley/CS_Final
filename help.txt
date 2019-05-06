@@ -1,5 +1,5 @@
----------------------------------------Help---------------------------------------
-Welcome to your help functionality!
+---------------------------------------Help!---------------------------------------
+Hello, welcome to your help functionality!
 
 Your four main functions are:
     - pick up an object
@@ -12,7 +12,7 @@ To use the drop function, enter "drop" (or a synonym) + the object.
 
 You can use the look function to either look at your surroundings or an item.
     - To look at an object, enter "look" (or a synonym) + object.
-    - Otherwise, just enter look (or a synonym) to see your surroundings.
+    - Otherwise, just enter look (or a synonym) to see your surroundings in your current location.
 
 Your movements can be North, South, East, or West.
 Enter "go north" (or a synonym) or any of the other directions to move that way.
