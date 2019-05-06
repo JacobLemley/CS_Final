@@ -4,7 +4,7 @@ def checkScore(name, objList):
     score = 0
     for item in objList:
         if(item[0]!="phone"):
-            score+=3
+            score+=3 #Using +=, -=, etc (3)
         elif(item[0]=="phone"):
             score+=10
     checkHighScore(name, score)
@@ -28,13 +28,13 @@ def checkHighScore(name, score):
         #addHighscore(name, score, b)
     else:
         print("Score: {0} \n Sorry, you didn't get a highscore.".format(score))
-        print("HIGHSCORES:\n{}:{}\n{}:{}\n{}:{}".format(b[0][0],b[0][1],b[1][0],b[1][1],b[2][0],b[2][1]))
+        print("HIGHSCORES:\n{}:{}\n{}:{}\n{}:{}".format(b[0][0],b[0][1],b[1][0],b[1][1],b[2][0],b[2][1])) #Using the formatting for strings (with print() statement) (5)
 
 
 def addHighScore(name, score, b):
     f = open("highscore.txt", "w")
     for item in b:
-        f.writelines(item[0] + ":" + str(item[1]) + "\n")
+        f.writelines(item[0] + ":" + str(item[1]) + "\n") #File Writing (15)
     f.close()
     print("HIGHSCORES:\n{}:{}\n{}:{}\n{}:{}".format(b[0][0],b[0][1],b[1][0],b[1][1],b[2][0],b[2][1]))
 

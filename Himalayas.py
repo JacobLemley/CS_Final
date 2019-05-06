@@ -26,7 +26,7 @@ class Room: #A Class (20)
         #read default file into a list of each line
         #File Reading (15)
         file = open(self.filepath, "r")
-        raw = []
+        raw = [] #List (10)
         for line in file:
             line = line.rstrip("\n")
             raw.append(line)
@@ -133,7 +133,7 @@ def endGame():
     else:
         exit() #https://stackoverflow.com/questions/73663/terminating-a-python-script
 
-'''Input analysis functions'''
+'''Input analysis functions''' #2 Styles of Comments (single and multiline) (3)
 
 def checkVerbs(raw, player, room):
     verb = ""
@@ -238,7 +238,7 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
         sortCommand(player, rooms, verb, subject, pos)
 
 def crossRiver(player, rooms, subject):
-    x = random.randrange(0, 5)
+    x = random.randrange(0, 5) # Random Number Generator (10)
     room = rooms[player.loc]
     if x == 3:
         print(fill("You slipped and fell in the river!", width=50))
@@ -275,41 +275,3 @@ def main(): #function definition and call (7)
             print("Please enter alphanumeric character only.")
 
 main()
-
-''' 2 Styles of Comments (single and multiline) (3)
-#Function Definition and Function Call (7)
-#Function Definition with Parameters and Function Call 10
-    Function Definition with Default Parameters and Function Call 12
-    Recursive Function Definition and Recursive Function Call 17
-#A function that calls another function (main not included) 5
-#Assignment Statement 3
-#2 Styles of Comments (single and multiline) 3
-#File Reading 15
-    File Writing 15
-#If Statement 5
-#Nested If Statement 7
-#For loop 7
-#While loop 7
-#A Class 20
-#List 10
-    Tuple 15
-    Set 15
-#Dictionary 15
-#A list that contains lists 20
-    Convert between Data Structures (List, Tuple, Set, etc.) for a purpose 13
-    Convert between string and list (or list and string) for a purpose 7
-#Nested Loops 12
-#Python code that “walks” through the contents of an List (or other data structure) 7
-    Finding the largest or smallest item in an List (not built-in) 10
-#Using build-in List (or other data structure) functionality (so a function like insert or append) (3)
-    Sorting of the contents of an List (not the built-in sort) 20
-#Try/Except Block 15
-#Using +=, -=, etc (3)
-#Using len with a purpose (and not within a different piece of code you are getting points for) (2)
-#print() statement (2)
-    Using the formatting for strings (with print() statement) 5
-    Random Number Generator 10
-#Import another Python file and use functionality 10
---
-    Flowchart or Design of the Entire Program (required) 20
-'''
