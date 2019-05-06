@@ -86,17 +86,17 @@ def goTo(room, player): #function to instantiate/change rooms
 def dropObj(room, player, object):
     for item in player.inventory:     
         if item == object[1]:
-            self.location.inventory.append(item)
-            self.inventory.remove(item)
+            room.location.append(item)
+            player.inventory.remove(item)
             print(fill("You dropped the " + str(item.name), width=50))
             return
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
-    for item in self.location.inventory:
+    for item in room.locations:
         if item == object[1]:
             self.inventory.append(item)
-            self.locations.inventory.remove(item)
+            room.location.remove(item)
             print("You picked up the", item.name)
     print(object[1] + " is not here!")
 
