@@ -1,7 +1,6 @@
 from textwrap import fill  #https://pymotw.com/3/textwrap/
 from sys import exit
 import secrets as shh ##Import another Python file and use functionality (10) this is another python file in the same directory as the main script
-import random
 
 ''' Classes '''
 class Player: #class to store player data, like inventory, location, etc.
@@ -87,17 +86,26 @@ def goTo(room, player): #function to instantiate/change rooms
         print("You have entered the astral plane, good luck traveler")
 
 def dropObj(room, player, object):
+<<<<<<< HEAD
     if item.name == object[1]:
         self.location.inventory.append(item)
         self.inventory.remove(item)
         print(fill("You dropped the " + str(item.name), width=50))
+=======
+    for item in player.inventory:     
+        if item == object[1]:
+            room.location.append(item)
+            player.inventory.remove(item)
+            print(fill("You dropped the " + str(item.name), width=50))
+            return
+>>>>>>> 3d9e184fd4b02ea15a41b87cb166301da15ef319
     print(object[1] + " is not here!")
 
 def pickUp(room, player, object):
-    for item in self.location.inventory:
-        if item.name == object[1]:
-            self.inventory.append(item)
-            self.locations.inventory.remove(item)
+    for item in room.locations:
+        if item == object[1]:
+            player.inventory.append(item)
+            room.location.remove(item)
             print("You picked up the", item.name)
     print(object[1] + " is not here!")
 
@@ -202,23 +210,23 @@ def sortCommand(player, rooms, verb, subject, pos): #sorts the subject and verb 
         if subject == "":
                 print(fill("I don't understand where you want to go.", width=50))
         elif player.loc == "river" and subject == "well":
-            crossRiver(player, rooms, subject)
+            crossRiver(player, rooms)
         elif player.loc == "well":
-            crossRiver(player, rooms, subject)
+            crossRiver(player, rooms)
         else:
             goTo(rooms[subject], player)
 
     if verb == "pickup":
-        if pos == "rooms":
+        if pos == rooms:
             pickUp(rooms, player, subject)
         else:
             print(fill("The object you want to pickup is not in your location.", width=50))
 
     if verb == "drop":
-        if pos == "inventory":
+        if pos == inventory:
             dropObj(rooms, player, subject)
         else:
-            print("You can't drop that.")
+            print("It is already in the room.")
 
     if verb == "":
         print(fill("I don't understand what you want to do. Type HELP for a list of commands.", width=50))
@@ -239,6 +247,7 @@ def checkInput(raw, player, rooms): #A function that calls another function (mai
         subject, pos = checkSubject(raw, player, room, verb)
         sortCommand(player, rooms, verb, subject, pos)
 
+<<<<<<< HEAD
 
 def crossRiver(player, rooms, subject):
     x = random.randrange(0, 5)
@@ -255,6 +264,8 @@ def crossRiver(player, rooms, subject):
         goTo(rooms[subject], player)
 
 
+=======
+>>>>>>> 3d9e184fd4b02ea15a41b87cb166301da15ef319
 def helpMe():
     openHelp = open("help.txt", "r")
     print(openHelp.read())
@@ -279,3 +290,41 @@ def main(): #function definition and call (7)
             print("Please enter alphanumeric character only.")
 
 main()
+
+''' 2 Styles of Comments (single and multiline) (3)
+#Function Definition and Function Call (7)
+#Function Definition with Parameters and Function Call 10
+    Function Definition with Default Parameters and Function Call 12
+    Recursive Function Definition and Recursive Function Call 17
+#A function that calls another function (main not included) 5
+#Assignment Statement 3
+#2 Styles of Comments (single and multiline) 3
+#File Reading 15
+    File Writing 15
+#If Statement 5
+#Nested If Statement 7
+#For loop 7
+#While loop 7
+#A Class 20
+#List 10
+    Tuple 15
+    Set 15
+#Dictionary 15
+#A list that contains lists 20
+    Convert between Data Structures (List, Tuple, Set, etc.) for a purpose 13
+    Convert between string and list (or list and string) for a purpose 7
+#Nested Loops 12
+#Python code that “walks” through the contents of an List (or other data structure) 7
+    Finding the largest or smallest item in an List (not built-in) 10
+#Using build-in List (or other data structure) functionality (so a function like insert or append) (3)
+    Sorting of the contents of an List (not the built-in sort) 20
+#Try/Except Block 15
+#Using +=, -=, etc (3)
+#Using len with a purpose (and not within a different piece of code you are getting points for) (2)
+#print() statement (2)
+    Using the formatting for strings (with print() statement) 5
+    Random Number Generator 10
+#Import another Python file and use functionality 10
+--
+    Flowchart or Design of the Entire Program (required) 20
+'''
