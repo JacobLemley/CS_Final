@@ -12,7 +12,7 @@ You can use the look function to either look at your surroundings or an item.
     - Otherwise, just enter look (or a synonym) to see your surroundings.
 
 Your movements can be North, South, East, or West.
-Enter "move north" (or a synonym) or any of the other directions to move that way.
+Enter "go north" (or a synonym) or any of the other directions to move that way.
 There are some places on the map where you can only go specific directions.
 You will have to figure these out yourself.
 
