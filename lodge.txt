@@ -1,9 +1,8 @@
 --------------------The Lodge--------------------
 INITIAL
-Welcome to the lodge! The flag atop the building reminds you of a shining beacon of hope, and while the lodge has for sure seen better days, it appears that it might still be helpful.  There is a wall phone next to a dictionary, which is funny because no one has one has used either of those things since the dawn of the dinosaurs. It is a bit dusty and you should be careful to not step through a hole in the floor, but feel free to explore the area.
+Welcome to the lodge! The flag atop the building reminds you of a shining beacon of hope, and while the lodge has for sure seen better days, it appears that it might still be helpful.  There is a wall phone next to a dictionary, which is funny because no one has one has used either of those things since the dawn of the dinosaurs. It is a bit dusty in here and you should be careful to not step through a hole in the floor, but feel free to explore the area.
 NORMAL
 Welcome back to the lodge.  It is still dusty and still helpful, so be sure to explore.
-blah blah
 LOCATIONS
 yakshack:north
 OBJECTS
