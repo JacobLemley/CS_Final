@@ -2,7 +2,7 @@
 INITIAL
 You wake up suddenly, on an icy ground with a cold breeze gushing at you from every direction.  The air is dry.  You look up and there are mountain ranges surrounding you from lengths of 2,400 km.  The feeling of confusion is creeping up on you; you think, "How did I get here?"  A wooden board on your far left says, "Welcome to the Himalayas," but there is no one to be found.  The view is beautiful yet ominous, since ice caps are melting around you, and the famous Himalayan black-necked cranes skulls are surrounding you in masses.  You walk around or across the still river in hope to find someone, but you find yourself in loss of words as you see a village flooded from afar.  As a UT environment student, you believe it is your responsibility to report this to the world by taking up any remaining artifacts.  There is a crown at your feet and the sign has broken into several pieces, but you are unsure if these will be helpful to you.  Also, the goal is to collect as many artifacts/details as you can.  Maybe one of them can help you get home.
 NORMAL
-You are back at the sign. There is a path to your south, west, and east.
+You are back at the sign. There are paths to your south, west, and east.
 LOCATIONS
 river:west
 souvenir:east
